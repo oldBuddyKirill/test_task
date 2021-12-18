@@ -11,7 +11,6 @@ class ProductsRepository {
       throw temp;
     } catch (e,s){
       Logger.log('ProductsRepository Error: $e. Stack: $s');
-      //throw SnackBarService(message: 'Не удалось загрузить расписание'); // todo complete
     }
   }
 }

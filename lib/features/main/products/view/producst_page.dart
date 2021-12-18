@@ -14,11 +14,11 @@ class ProductsPage extends StatelessWidget {
     return SafeArea(
       child: Column(
         children: [
-          const MyAppBar(),
+          MyAppBar(),
           const Divider(height: 1),
           Expanded(
             child: GridView.builder(
-              // physics: const BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               itemCount: productList.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,

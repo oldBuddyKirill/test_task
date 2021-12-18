@@ -20,7 +20,7 @@ import 'package:test_task/features/main/view/profile_page.dart';
         page: EmptyRouterPage,
         name: 'CategoriesRouter',
         children: [
-          AutoRoute(page: CategoriesPage, initial: true), // todo add children and empty router page
+          AutoRoute(page: CategoriesPage, initial: true),
           AutoRoute(page: ProductsPage),
         ],
       ),

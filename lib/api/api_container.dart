@@ -19,7 +19,7 @@ class ApiContainer {
           connectTimeout: 32000,
           receiveTimeout: 32000,
         )) {
-    _client.options.headers['Accept'] = 'application/json'; // todo check
+    _client.options.headers['Accept'] = 'application/json';
     _client.interceptors.add(CustomInterceptors());
   }
 }

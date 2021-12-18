@@ -11,7 +11,7 @@ class SingleTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double width = MediaQuery.of(context).size.width; // todo
+    final double width = MediaQuery.of(context).size.width;
     bool isFavorite = false;
     return Container(
       alignment: Alignment.center,
@@ -56,7 +56,11 @@ class SingleTile extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const Expanded(flex: 1, child: Icon(Icons.shopping_cart_outlined)), // todo change icon
+                      const Expanded(
+                        flex: 1,
+                        child: SizedBox(
+                            child: Image(image: AssetImage('assets/tab_bar/cart_act.png'), height: 16, width: 16)),
+                      ),
                     ],
                   ),
                 ),

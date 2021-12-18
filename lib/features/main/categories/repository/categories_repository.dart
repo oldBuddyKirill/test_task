@@ -11,7 +11,6 @@ class CategoriesRepository {
       throw temp;
     } catch (e,s){
       Logger.log('CategoriesRepository Error: $e. Stack: $s');
-      //throw SnackBarService(message: 'Не удалось загрузить расписание'); // todo complete
     }
   }
 }

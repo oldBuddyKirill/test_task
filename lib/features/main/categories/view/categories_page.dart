@@ -15,7 +15,7 @@ class CategoriesPage extends StatelessWidget {
           return ListView.builder(
               scrollDirection: Axis.vertical,
               itemCount: context.read<MainBloc>().categoriesList.length,
-              //physics: const BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               itemBuilder: (context, index) => Container(
                     margin: const EdgeInsets.symmetric(horizontal: 16),
                     child: Column(
@@ -28,7 +28,6 @@ class CategoriesPage extends StatelessWidget {
                           ),
                           trailing: const Icon(Icons.navigate_next, color: AppColors.grey, size: 24),
                           onTap: () {
-                            // todo reformat
                             context.read<MainBloc>().add(OnCategoryTap(index + 1));
                           }
                         ),

@@ -16,9 +16,11 @@ class MainPage extends StatelessWidget {
         CartRoute(),
         ProfileRoute(),
       ],
+      // animationDuration: const Duration(milliseconds: 2000),
+      // animationCurve: Curves.easeInCirc,
       backgroundColor: AppColors.white,
-      appBarBuilder: (_, tabsRouter) => AppBar(
-        title:  const Text('TestStore', style: TextStyle(color: AppColors.grey)),
+      appBarBuilder: (context, tabsRouter) => AppBar(
+        title:  Text(indexToTitle(context.tabsRouter), style: TextStyle(color: AppColors.grey)),
         shadowColor: const Color.fromRGBO(138, 136, 132, 0.24),
         centerTitle: true,
         elevation: 1,
@@ -48,7 +50,6 @@ class MainPage extends StatelessWidget {
     );
   }
 
-  // todo delete
   String indexToTitle (TabsRouter? tabsRouter) {
     switch (tabsRouter?.activeIndex) {
       case 0:

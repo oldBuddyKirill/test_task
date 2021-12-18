@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart'; // todo check
 import 'package:test_task/features/main/categories/models/categories_model.dart';
 import 'package:test_task/features/main/categories/repository/categories_repository.dart';
 import 'package:test_task/features/main/products/models/product_model.dart';
@@ -17,16 +16,11 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   MainBloc({required this.router}) : super(MainInitial()) {
     on<LoadCategories>(_loadCategories);
     on<OnCategoryTap>(_loadProducts);
-    on<OnFilterTap>((event, emit) {
-      tempBool = event.isSelected;
-      emit(ShowScreen());
-    });
   }
 
   List<CategoriesModel> categoriesList = [];
   List<ProductModel> productList = [];
   final StackRouter router;
-  bool? tempBool = true;
 
   FutureOr<void> _loadProducts(event, emit) async {
     try {
@@ -47,7 +41,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       categoriesList = await CategoriesRepository.getCategories();
       emit(ShowScreen());
     } catch (e) {
-      Logger.log('MainBloc: error while loading categories'); // todo
+      Logger.log('MainBloc: error while loading categories');
     }
   }
 }
