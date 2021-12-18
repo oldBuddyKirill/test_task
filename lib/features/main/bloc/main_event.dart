@@ -9,4 +9,9 @@ class OnCategoryTap extends MainEvent {
   OnCategoryTap(this.id);
 }
 
+class OnFilterTap extends MainEvent{
+  bool? isSelected;
+  OnFilterTap(this.isSelected);
+}
+
 

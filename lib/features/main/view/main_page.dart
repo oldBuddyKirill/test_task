@@ -10,20 +10,21 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
       routes: const [
-        EmptyRoute(),
-        CategoriesRoute(),
-        EmptyRoute(),
-        EmptyRoute(),
-        EmptyRoute(),
+        HomeRoute(),
+        CategoriesRouter(),
+        FavoritesRoute(),
+        CartRoute(),
+        ProfileRoute(),
       ],
       backgroundColor: AppColors.white,
       appBarBuilder: (_, tabsRouter) => AppBar(
-        title:  const Text('test', style: TextStyle(color: AppColors.grey)),
+        title:  const Text('TestStore', style: TextStyle(color: AppColors.grey)),
+        shadowColor: const Color.fromRGBO(138, 136, 132, 0.24),
         centerTitle: true,
         elevation: 1,
         backgroundColor: AppColors.white,
         leading: const AutoBackButton(color: AppColors.grey),
-      ), // todo сделать изменяемым
+      ),
       bottomNavigationBuilder: (_, tabsRouter) => BottomNavigationBar(
         items: _bottomItems,
         currentIndex: tabsRouter.activeIndex,
@@ -47,6 +48,7 @@ class MainPage extends StatelessWidget {
     );
   }
 
+  // todo delete
   String indexToTitle (TabsRouter? tabsRouter) {
     switch (tabsRouter?.activeIndex) {
       case 0:

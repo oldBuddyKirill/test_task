@@ -10,7 +10,6 @@ class CustomInterceptors extends Interceptor {
     URL: ${options.uri}
     Method: ${options.method}
     Query Parameters: ${options.queryParameters}
-    Body: ${options.data}
     """);
     super.onRequest(options, handler);
   }

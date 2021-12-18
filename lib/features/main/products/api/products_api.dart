@@ -6,7 +6,7 @@ class ProductsApi {
 
   static Future<Response> getProducts (int id) async {
     try{
-      final response = await BaseApi.get(url: _productsUrl, queryParameters: {'id' : id});
+      final response = await BaseApi.get(url: _productsUrl, queryParameters: {'categoryId' : id});
       return response;
     } catch (e) {
       rethrow;

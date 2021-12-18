@@ -23,7 +23,7 @@ class ProductModel {
         slug = json['slug'],
         imageUrl = json['image']['file']['url'],
         price = json['price'],
-        colors = json['colors'];
+        colors = Colors.fromJsonArray(json['colors']);
 
   static List<ProductModel> fromJsonArray (List<dynamic> json){
     final List<ProductModel> result = [];
