@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:test_task/features/main/categories/view/categories_page.dart';
-import 'package:test_task/features/main/products/view/producst_page.dart';
+import 'package:test_task/features/main/products/view/products_page.dart';
 import 'package:test_task/features/main/view/cart_page.dart';
 import 'package:test_task/features/main/view/favorites_page.dart';
 import 'package:test_task/features/main/view/home_page.dart';

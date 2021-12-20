@@ -12,8 +12,7 @@ import 'package:auto_route/auto_route.dart' as _i6;
 import 'package:flutter/material.dart' as _i9;
 
 import '../features/main/categories/view/categories_page.dart' as _i7;
-import '../features/main/products/models/product_model.dart' as _i10;
-import '../features/main/products/view/producst_page.dart' as _i8;
+import '../features/main/products/view/products_page.dart' as _i8;
 import '../features/main/view/cart_page.dart' as _i4;
 import '../features/main/view/favorites_page.dart' as _i3;
 import '../features/main/view/home_page.dart' as _i2;
@@ -58,8 +57,7 @@ class AppRouter extends _i6.RootStackRouter {
       final args = routeData.argsAs<ProductsRouteArgs>();
       return _i6.MaterialPageX<dynamic>(
           routeData: routeData,
-          child:
-              _i8.ProductsPage(key: args.key, productList: args.productList));
+          child: _i8.ProductsPage(key: args.key, categoryId: args.categoryId));
     }
   };
 
@@ -149,23 +147,23 @@ class CategoriesRoute extends _i6.PageRouteInfo<void> {
 /// generated route for
 /// [_i8.ProductsPage]
 class ProductsRoute extends _i6.PageRouteInfo<ProductsRouteArgs> {
-  ProductsRoute({_i9.Key? key, required List<_i10.ProductModel> productList})
+  ProductsRoute({_i9.Key? key, required int categoryId})
       : super(ProductsRoute.name,
             path: 'products-page',
-            args: ProductsRouteArgs(key: key, productList: productList));
+            args: ProductsRouteArgs(key: key, categoryId: categoryId));
 
   static const String name = 'ProductsRoute';
 }
 
 class ProductsRouteArgs {
-  const ProductsRouteArgs({this.key, required this.productList});
+  const ProductsRouteArgs({this.key, required this.categoryId});
 
   final _i9.Key? key;
 
-  final List<_i10.ProductModel> productList;
+  final int categoryId;
 
   @override
   String toString() {
-    return 'ProductsRouteArgs{key: $key, productList: $productList}';
+    return 'ProductsRouteArgs{key: $key, categoryId: $categoryId}';
   }
 }

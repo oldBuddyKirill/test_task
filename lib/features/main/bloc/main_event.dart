@@ -4,9 +4,14 @@ abstract class MainEvent {}
 
 class LoadCategories extends MainEvent {}
 
-class OnCategoryTap extends MainEvent {
-  final int id;
-  OnCategoryTap(this.id);
+class OnCartTap extends MainEvent {
+  final int productId;
+  OnCartTap(this.productId);
+}
+
+class OnFavoriteTap extends MainEvent {
+  final int productId;
+  OnFavoriteTap(this.productId);
 }
 
 

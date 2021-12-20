@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_task/features/main/bloc/main_bloc.dart';
 import 'package:test_task/resources/app_colors.dart';
+import 'package:auto_route/auto_route.dart';
+import 'package:test_task/router/app_router.gr.dart';
 
 class CategoriesPage extends StatelessWidget {
   const CategoriesPage({Key? key}) : super(key: key);
@@ -28,7 +30,7 @@ class CategoriesPage extends StatelessWidget {
                           ),
                           trailing: const Icon(Icons.navigate_next, color: AppColors.grey, size: 24),
                           onTap: () {
-                            context.read<MainBloc>().add(OnCategoryTap(index + 1));
+                            context.router.push(ProductsRoute(categoryId: index + 1));
                           }
                         ),
                         const Divider(),
